@@ -19,7 +19,7 @@ include '../templates/nav.template.php';
                     <h5 class="mt-5">Adresse</h5>
 
                     <div class="form-row mt-3">
-                        <div class="col-10">
+                        <div class="col-6">
                             <label for="zipcode">Postleitzahl:</label>
                             <input name="zipcode" type="text" class="form-control" id="zipcode">
                         </div>
@@ -85,7 +85,7 @@ include '../templates/nav.template.php';
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary mt-5" name="submit">Submit</button>
+                    <button type="submit" class="btn btn-info mt-5" name="submit">Submit</button>
 
                 </form>
             </div>
