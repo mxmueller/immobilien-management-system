@@ -8,7 +8,7 @@ include '../templates/header.template.php';
 include '../templates/nav.template.php';
 ?>
 
-    <div class="container-fluid p-5" >
+    <div class="container-fluid p-5">
         <div class="card shadow-lg">
             <div class="card-header ">
                 <h4 class="mt-2">Neue Immobilie Anlegen</h4>
@@ -32,7 +32,7 @@ include '../templates/nav.template.php';
                     <div class="form-row mt-3">
                         <div class="col-10">
                             <label for="street">Straße:</label>
-                            <input name="street"type="text" class="form-control" id="street">
+                            <input name="street" type="text" class="form-control" id="street">
                         </div>
                         <div class="col">
                             <label for="street_number">Hausnummer:</label>
@@ -69,7 +69,8 @@ include '../templates/nav.template.php';
 
                         <div class="form-group mt-3">
                             <label for="price_per_square_meter">Preis Pro m²:</label>
-                            <input name="price_per_square_meter" type="text" class="form-control" id="price_per_square_meter">
+                            <input name="price_per_square_meter" type="text" class="form-control"
+                                id="price_per_square_meter">
                         </div>
 
                         <div class="form-group mt-3">
@@ -77,10 +78,10 @@ include '../templates/nav.template.php';
                             <input name="additional_cost" type="text" class="form-control" id="additional_cost">
                         </div>
 
-                        <div class="form-group mt-5">
-                            <h5>Mietkosten pro Monat</h5>
-                            <div id="cost_sum">
-                                <h5>499€</h5>
+                        <div class="shadow-lg card card-custom-money" style="max-width: 15rem;">
+                            <div class="card-body">
+                                <h6 class="card-title">Mietertrag pro Monat</h6>
+                                <p class="card-text font-weight-bold text-success">499€</p>
                             </div>
                         </div>
                     </div>
@@ -92,4 +93,5 @@ include '../templates/nav.template.php';
         </div>
 
 </body>
+
 </html>
