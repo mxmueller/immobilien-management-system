@@ -8,9 +8,9 @@ include '../templates/header.template.php';
 include '../templates/nav.template.php';
 ?>
 
-    <div class="container-fluid p-5">
-        <div class="card">
-            <div class="card-header">
+    <div class="container-fluid p-5" >
+        <div class="card shadow-lg">
+            <div class="card-header ">
                 <h4 class="mt-2">Neue Immobilie Anlegen</h4>
             </div>
             <div class="card-body">
