@@ -1,15 +1,15 @@
 <?php
 
-$servername = "localhost";
+$servername = "127.0.0.1";
 $username = "root";
 $password = "";
-$dbname = "ims_local_intance";
+$database = "ims_local_instance";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$connection = new mysqli($servername, $username, $password, $database);
 // Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+if ($connection->connect_error) {
+  die("Connection failed: " . $connection->connect_error);
 }
 
 
