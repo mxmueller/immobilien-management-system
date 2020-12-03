@@ -1,1 +1,1 @@
-# https://app.dbdesigner.net/designer/schema/377427
+# https://dbdesigner.page.link/o9Z24yn7XDKSCMT16
