@@ -15,7 +15,7 @@ include '../templates/nav.template.php';
             </div>
             <div class="card-body">
 
-                <form action="../methods/add_new_entry.php" method="post">
+                <form action="../methods/inserts/newRecord.php" method="post">
                     <h5 class="mt-5">Adresse</h5>
 
                     <div class="form-row mt-3">
