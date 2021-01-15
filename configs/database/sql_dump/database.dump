@@ -22,8 +22,8 @@ CREATE TABLE `Estates` (
 
 CREATE TABLE `Estates_In_Landlords` (
 	`Estates_In_LandlordsID` INT NOT NULL AUTO_INCREMENT,
-	`EstateID` INT NOT NULL AUTO_INCREMENT,
-	`LandlordID` INT NOT NULL AUTO_INCREMENT,
+	`EstateID` INT NOT NULL,
+	`LandlordID` INT NOT NULL,
 	PRIMARY KEY (`Estates_In_LandlordsID`)
 );
 
