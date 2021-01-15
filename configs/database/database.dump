@@ -72,11 +72,11 @@ CREATE TABLE `Addresses` (
 );
 
 
-CREATE TABLE 'ZipCodes' (
-	'ZipCodeID' INT NOT NULL AUTO_INCREMENT,
-	'ZipCode' varchar(255) NOT NULL,
-	'City' varchar(255) NOT NULL,
-	PRIMARY KEY ('ZipCodeID')
+CREATE TABLE `ZipCodes` (
+	`ZipCodeID` INT NOT NULL AUTO_INCREMENT,
+	`ZipCode` varchar(255) NOT NULL,
+	`City` varchar(255) NOT NULL,
+	PRIMARY KEY (`ZipCodeID`)
 );
 
 CREATE TABLE `Estate_Meta` (
