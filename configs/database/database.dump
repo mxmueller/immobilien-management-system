@@ -61,15 +61,22 @@ CREATE TABLE `Tentants_In_Estates` (
 	PRIMARY KEY (`Tentants_In_EstatesID`)
 );
 
+CREATE TABLE 'ZipCodes' (
+	'ZipCodeID' INT NOT NULL AUTO_INCREMENT,
+	'ZipCode' varchar(255) NOT NULL,
+	'City' varchar(255) NOT NULL,
+	PRIMARY KEY ('ZipCodeID')
+);
+
 CREATE TABLE `Addresses` (
 	`AddressID` INT NOT NULL AUTO_INCREMENT,
-	`Address_Zipcode` varchar(255) NOT NULL,
+	`ZipcodeID` INT NOT NULL,
 	`Address_Street` varchar(255) NOT NULL,
 	`Address_Street_Number` varchar(255) NOT NULL,
-	`Address_City` varchar(255) NOT NULL,
 	`Address_Country_Code` varchar(255) NOT NULL,
 	PRIMARY KEY (`AddressID`)
 );
+
 
 CREATE TABLE `Estate_Meta` (
 	`Estate_MetaID` INT NOT NULL AUTO_INCREMENT,
@@ -80,6 +87,8 @@ CREATE TABLE `Estate_Meta` (
 	`Estate_Meta_Additional_Costs` DECIMAL NOT NULL,
 	PRIMARY KEY (`Estate_MetaID`)
 );
+
+ALTER TABLE `Addresses` ADD CONSTRAINT `Addresses_fk` FOREIGN KEY (`ZipCodeID`) REFERENCES `ZipCodes`(`ZipCodeID`);
 
 ALTER TABLE `Estates` ADD CONSTRAINT `Estates_fk0` FOREIGN KEY (`Estate_TypeID`) REFERENCES `Estate_Types`(`Estate_TypeID`);
 
