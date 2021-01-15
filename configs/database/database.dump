@@ -61,12 +61,6 @@ CREATE TABLE `Tentants_In_Estates` (
 	PRIMARY KEY (`Tentants_In_EstatesID`)
 );
 
-CREATE TABLE 'ZipCodes' (
-	'ZipCodeID' INT NOT NULL AUTO_INCREMENT,
-	'ZipCode' varchar(255) NOT NULL,
-	'City' varchar(255) NOT NULL,
-	PRIMARY KEY ('ZipCodeID')
-);
 
 CREATE TABLE `Addresses` (
 	`AddressID` INT NOT NULL AUTO_INCREMENT,
@@ -77,6 +71,13 @@ CREATE TABLE `Addresses` (
 	PRIMARY KEY (`AddressID`)
 );
 
+
+CREATE TABLE 'ZipCodes' (
+	'ZipCodeID' INT NOT NULL AUTO_INCREMENT,
+	'ZipCode' varchar(255) NOT NULL,
+	'City' varchar(255) NOT NULL,
+	PRIMARY KEY ('ZipCodeID')
+);
 
 CREATE TABLE `Estate_Meta` (
 	`Estate_MetaID` INT NOT NULL AUTO_INCREMENT,
