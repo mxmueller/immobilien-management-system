@@ -11,6 +11,18 @@ session_start();
             <div class="card-body">
                <h5 class="card-title text-center">Registrierung</h5>
                <form class="form-signin" action="../methods/user/registration.user.php" method="POST">
+                  <?php
+               if (!empty($_GET['error'])) {
+                  ?>
+                  <div class="form-label-group mt-4">
+                     <div class="alert alert-danger" role="alert">
+                        E-Mail bereits vorhanden!
+                     </div>
+                  </div>
+                  <?php
+                  }
+                  ?>
+
                   <div class="form-label-group mt-3">
                      <input class="form-control" type="text" name="firstname" placeholder="Vorname">
                   </div>
@@ -24,10 +36,11 @@ session_start();
                      <input class="form-control" type="password" name="password" placeholder="Passwort">
                   </div>
                   <div class="form-label-group mt-4">
-                  <button class="btn btn-primary btn-block text-uppercase" name="submit" type="submit">Abschicken</button>
+                     <button class="btn btn-primary btn-block text-uppercase" name="submit"
+                        type="submit">Abschicken</button>
                   </div>
                   <div class="form-label-group mt-4">
-                  <a href="../sites/login.sites.php" class="btn btn-link" role="button">Login</a>
+                     <a href="../sites/login.sites.php" class="btn btn-link" role="button">Login</a>
                   </div>
                </form>
             </div>
