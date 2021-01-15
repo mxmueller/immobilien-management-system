@@ -4,12 +4,34 @@ include '../templates/header.template.php';
 session_start();
 ?>
 
-<h1>Registrierungsformular</h1>
-<form action="../methods/user/registration.user.php" method="POST">
-   <input type="text" name="firstname" placeholder="Vorname"><br>
-   <input type="text" name="lastname" placeholder="Nachname"><br>
-   <input type="text" name="user" placeholder="Benutzername"><br>
-   <input type="email" name="mail" placeholder="E-Mail"><br>
-   <input type="password" name="password" placeholder ="Passwort"><br>
-   <button type="submit" name="submit">Registrieren</button>
-</form>
+<div class="container">
+   <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+         <div class="card card-signin my-5">
+            <div class="card-body">
+               <h5 class="card-title text-center">Registrierung</h5>
+               <form class="form-signin" action="../methods/user/registration.user.php" method="POST">
+                  <div class="form-label-group mt-3">
+                     <input class="form-control" type="text" name="firstname" placeholder="Vorname">
+                  </div>
+                  <div class="form-label-group mt-3">
+                     <input class="form-control" type="text" name="lastname" placeholder="Nachname">
+                  </div>
+                  <div class="form-label-group mt-3">
+                     <input class="form-control" type="email" name="mail" placeholder="E-Mail">
+                  </div>
+                  <div class="form-label-group mt-3">
+                     <input class="form-control" type="password" name="password" placeholder="Passwort">
+                  </div>
+                  <div class="form-label-group mt-4">
+                  <button class="btn btn-primary btn-block text-uppercase" name="submit" type="submit">Abschicken</button>
+                  </div>
+                  <div class="form-label-group mt-4">
+                  <a href="../sites/login.sites.php" class="btn btn-link" role="button">Login</a>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

@@ -7,24 +7,24 @@ if (isset($_POST['submit'])) {
 
   $firstname = mysqli_real_escape_string($connection, $_POST['firstname']);
   $lastname = mysqli_real_escape_string($connection, $_POST['lastname']);
-  $user = mysqli_real_escape_string($connection, $_POST['user']);
   $password = mysqli_real_escape_string($connection, $_POST['password']);
-
+  $mail = mysqli_real_escape_string($connection, $_POST['mail']);
   $hashPassword = password_hash($password,PASSWORD_DEFAULT);
 
-  $sql = "INSERT INTO landlords (Landlord_Forename, Landlord_Surname) 
+  $sql_landlords = "INSERT INTO landlords (Landlord_Forename, Landlord_Surname) 
             VALUES ('$firstname', '$lastname');";
 
-  $result = mysqli_query($connection, $sql);
+  $result_landlords = mysqli_query($connection, $sql_landlords);
+  $last_record = mysqli_insert_id($connection);
 
-//   $mysqli -> query("INSERT INTO Persons (FirstName, LastName, Age) VALUES ('Glenn', 'Quagmire', 33)");
+  $sql_landlords_credentials = "INSERT INTO landlords_credentials (LandlordID, Landlord_Mail, Landlord_Password) 
+            VALUES ('$last_record', '$mail', '$hashPassword');";
 
-//   // Print auto-generated id
-//   echo "New record has id: " . $mysqli -> insert_id;
+  $result_landlords_credentials = mysqli_query($connection, $sql_landlords_credentials);
+
+  header("Location: ../../sites/login.sites.php");
 
 } else {
-// Falls jemand die URL erraten hat, wird er durch
-// das else zum Registrierungsformular geschickt
-    header("Location: ../signup.php");
+    header("Location: ../../sites/login.sites.php");
     exit();
 }
