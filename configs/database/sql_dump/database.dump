@@ -116,5 +116,3 @@ ALTER TABLE `Tentants_In_Estates` ADD CONSTRAINT `Tentants_In_Estates_fk0` FOREI
 
 ALTER TABLE `Tentants_In_Estates` ADD CONSTRAINT `Tentants_In_Estates_fk1` FOREIGN KEY (`TentantID`) REFERENCES `Tenants`(`TentantID`);
 
-INSERT INTO estate_types (Estate_Type)
-VALUES ('Haus'), ('Wohnung'), ('Apartment'), ('Loft'), ('Doppelhaus'), ('Gewerbeimmobilien');

@@ -1,0 +1,121 @@
+CREATE TABLE `Landlords` (
+	`LandlordID` INT NOT NULL AUTO_INCREMENT,
+	`Landlord_Forename` varchar(255) NOT NULL,
+	`Landlord_Surname` varchar(255) NOT NULL,
+	PRIMARY KEY (`LandlordID`)
+);
+
+CREATE TABLE `Tenants` (
+	`TentantID` INT NOT NULL AUTO_INCREMENT,
+	`Tentant_Surname` varchar(255) NOT NULL,
+	PRIMARY KEY (`TentantID`)
+);
+
+CREATE TABLE `Estates` (
+	`EstateID` INT NOT NULL AUTO_INCREMENT,
+	`Estate_TypeID` INT(255) NOT NULL,
+	`Estate_ParentID` INT(255) NOT NULL,
+	`AddressID` INT NOT NULL,
+	`Estate_MetaID` INT NOT NULL,
+	PRIMARY KEY (`EstateID`)
+);
+
+CREATE TABLE `Estates_In_Landlords` (
+	`Estates_In_LandlordsID` INT NOT NULL AUTO_INCREMENT,
+	`EstateID` INT NOT NULL,
+	`LandlordID` INT NOT NULL,
+	PRIMARY KEY (`Estates_In_LandlordsID`)
+);
+
+CREATE TABLE `Landlords_Credentials` (
+	`Landlord_CredentialD` INT NOT NULL AUTO_INCREMENT,
+	`LandlordID` INT NOT NULL,
+	`Landlord_Mail` varchar(255) NOT NULL,
+	`Landlord_Password` varchar(255) NOT NULL,
+	PRIMARY KEY (`Landlord_CredentialD`)
+);
+
+CREATE TABLE `Landlord_In_Permission` (
+	`Landlord_In_PermissionID` INT NOT NULL AUTO_INCREMENT,
+	`LandlordID` INT(255) NOT NULL,
+	`PermissionID` INT(255) NOT NULL,
+	PRIMARY KEY (`Landlord_In_PermissionID`)
+);
+
+CREATE TABLE `Permissions` (
+	`PermissionID` INT NOT NULL AUTO_INCREMENT,
+	`Permission_Type` varchar(255) NOT NULL,
+	PRIMARY KEY (`PermissionID`)
+);
+
+CREATE TABLE `Estate_Types` (
+	`Estate_TypeID` INT NOT NULL AUTO_INCREMENT,
+	`Estate_Type` varchar(255) NOT NULL,
+	PRIMARY KEY (`Estate_TypeID`)
+);
+
+CREATE TABLE `Tentants_In_Estates` (
+	`Tentants_In_EstatesID` INT NOT NULL AUTO_INCREMENT,
+	`EstateID` INT NOT NULL,
+	`TentantID` INT NOT NULL,
+	PRIMARY KEY (`Tentants_In_EstatesID`)
+);
+
+
+CREATE TABLE `Addresses` (
+	`AddressID` INT NOT NULL AUTO_INCREMENT,
+	`ZipcodeID` INT NOT NULL,
+	`Address_Street` varchar(255) NOT NULL,
+	`Address_Street_Number` varchar(255) NOT NULL,
+	`Address_Country_Code` varchar(255) NOT NULL,
+	PRIMARY KEY (`AddressID`)
+);
+
+
+CREATE TABLE `ZipCodes` (
+	`ZipCodeID` INT NOT NULL AUTO_INCREMENT,
+	`loc_id` BIGINT,
+	`ZipCode` varchar(255) NOT NULL,
+	`City` varchar(255) NOT NULL,
+	`lat` FLOAT,
+	`lon` FLOAT,
+	PRIMARY KEY (`ZipCodeID`)
+);
+
+CREATE TABLE `Estate_Meta` (
+	`Estate_MetaID` INT NOT NULL AUTO_INCREMENT,
+	`Estate_Meta_Surface_Size` varchar(255) NOT NULL,
+	`Estate_Meta_Rooms_Count` INT(255) NOT NULL,
+	`Estate_Meta_Bathroom_Count` INT(255) NOT NULL,
+	`Estate_Meta_Price_Per_Squaremeters` DECIMAL NOT NULL,
+	`Estate_Meta_Additional_Costs` DECIMAL NOT NULL,
+	PRIMARY KEY (`Estate_MetaID`)
+);
+
+ALTER TABLE `Addresses` ADD CONSTRAINT `Addresses_fk` FOREIGN KEY (`ZipCodeID`) REFERENCES `ZipCodes`(`ZipCodeID`);
+
+ALTER TABLE `Estates` ADD CONSTRAINT `Estates_fk0` FOREIGN KEY (`Estate_TypeID`) REFERENCES `Estate_Types`(`Estate_TypeID`);
+
+ALTER TABLE `Estates` ADD CONSTRAINT `Estates_fk1` FOREIGN KEY (`Estate_ParentID`) REFERENCES `Estates`(`EstateID`);
+
+ALTER TABLE `Estates` ADD CONSTRAINT `Estates_fk2` FOREIGN KEY (`AddressID`) REFERENCES `Addresses`(`AddressID`);
+
+ALTER TABLE `Estates` ADD CONSTRAINT `Estates_fk3` FOREIGN KEY (`Estate_MetaID`) REFERENCES `Estate_Meta`(`Estate_MetaID`);
+
+ALTER TABLE `Estates_In_Landlords` ADD CONSTRAINT `Estates_In_Landlords_fk0` FOREIGN KEY (`EstateID`) REFERENCES `Estates`(`EstateID`);
+
+ALTER TABLE `Estates_In_Landlords` ADD CONSTRAINT `Estates_In_Landlords_fk1` FOREIGN KEY (`LandlordID`) REFERENCES `Landlords`(`LandlordID`);
+
+ALTER TABLE `Landlords_Credentials` ADD CONSTRAINT `Landlords_Credentials_fk0` FOREIGN KEY (`LandlordID`) REFERENCES `Landlords`(`LandlordID`);
+
+ALTER TABLE `Landlord_In_Permission` ADD CONSTRAINT `Landlord_In_Permission_fk0` FOREIGN KEY (`LandlordID`) REFERENCES `Landlords`(`LandlordID`);
+
+ALTER TABLE `Landlord_In_Permission` ADD CONSTRAINT `Landlord_In_Permission_fk1` FOREIGN KEY (`PermissionID`) REFERENCES `Permissions`(`PermissionID`);
+
+ALTER TABLE `Tentants_In_Estates` ADD CONSTRAINT `Tentants_In_Estates_fk0` FOREIGN KEY (`EstateID`) REFERENCES `Estates`(`EstateID`);
+
+ALTER TABLE `Tentants_In_Estates` ADD CONSTRAINT `Tentants_In_Estates_fk1` FOREIGN KEY (`TentantID`) REFERENCES `Tenants`(`TentantID`);
+
+INSERT INTO estate_types (Estate_Type)
+VALUES ('Haus'), ('Wohnung'), ('Apartment'), ('Loft'), ('Doppelhaus'), ('Gewerbeimmobilien');
+
