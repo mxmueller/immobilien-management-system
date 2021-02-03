@@ -9,7 +9,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 <?php
 include '../templates/nav.template.php';
 ?>
-
     <div class="container-fluid p-5">
         <div class="card shadow-lg">
             <div class="card-header ">
@@ -47,17 +46,15 @@ include '../templates/nav.template.php';
                     <div class="form-group mt-3">
                         <label for="estate_type">Immobilien Typ:</label>
                         <select name="estate_type" class="form-control" id="estate_type">
-
                             <?php
                                 include '../methods/view/types.view.php';
-                                print_r(TypeData());
-                            ?>
+                                $TypeDataArray = TypeData();
 
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                                foreach($TypeDataArray as $Type) {
+                                // to know what's in $item
+                                echo '<option value=' . $Type['Estate_TypeID'] . '>' . $Type['Estate_Type'] . '</option>';
+                            }
+                            ?>
                         </select>
 
                         <div class="form-group mt-3">
