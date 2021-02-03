@@ -74,8 +74,11 @@ CREATE TABLE `Addresses` (
 
 CREATE TABLE `ZipCodes` (
 	`ZipCodeID` INT NOT NULL AUTO_INCREMENT,
+	`loc_id` BIGINT,
 	`ZipCode` varchar(255) NOT NULL,
 	`City` varchar(255) NOT NULL,
+	`lat` FLOAT,
+	`lon` FLOAT,
 	PRIMARY KEY (`ZipCodeID`)
 );
 
