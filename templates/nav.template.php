@@ -1,6 +1,6 @@
 <?php
 echo '<nav class=" shadow p-3 navbar navbar-expand-lg navbar-dark bg-primary">
-<a class="navbar-brand" href="/">
+<a class="navbar-brand" href="../sites/dashboard.sites.php">
   <img class="ml-4" src="../assets/imsLogo.svg" alt="Logo" style="
   max-width: 50px">
 </a>
@@ -10,13 +10,7 @@ echo '<nav class=" shadow p-3 navbar navbar-expand-lg navbar-dark bg-primary">
 <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link font-weight-custom" href="#">Features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link font-weight-custom" href="#">Pricing</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link font-weight-custom" href="#">About</a>
+        <a class="nav-link font-weight-custom" href="../sites/form.sites.php">Neues Objekt anlegen</a>
       </li>
     </ul>
   </div>

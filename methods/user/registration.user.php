@@ -1,6 +1,12 @@
 
 <?php
 
+session_start();
+
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { 
+    header("Location: ../../sites/dashboard.sites.php"); 
+}
+
 if (isset($_POST['submit'])) {
 
   include '../config/database.config.php';
@@ -31,8 +37,6 @@ if (isset($_POST['submit'])) {
        header("Location: ../../sites/registration.sites.php?error=true");
   }
 
-
-  
 
 } else {
     header("Location: ../../sites/login.sites.php");

@@ -1,6 +1,9 @@
 
 <?php
 
+session_start();
+
+
 if (isset($_POST['submit'])) {
 
 include '../config/database.config.php';
@@ -15,9 +18,15 @@ include '../config/database.config.php';
     );
 
     if (password_verify($password, $user_collection['password'])) {
-        echo "erfolgreicher loggin";
+
+        $_SESSION['loggedin'] = true;
+        $_SESSION['user_id'] = $user_collection['id'];
+        $_SESSION['user_mail'] = $user_collection['mail'];
+
+        header("Location: ../../sites/dashboard.sites.php");    
     } else {
-        echo "error loggin";
+        echo "Wrong Password, Mail combination!";
+        header("Location: ../..");
     }
 
 } else {

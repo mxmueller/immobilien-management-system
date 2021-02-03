@@ -1,9 +1,7 @@
 <?php
 include '../templates/header.template.php';
-
 session_start();
 ?>
-
 
 <div class="container">
    <div class="row">

@@ -1,6 +1,5 @@
 <?php
 include '../templates/header.template.php';
-
 session_start();
 ?>
 

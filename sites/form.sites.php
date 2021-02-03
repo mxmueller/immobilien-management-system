@@ -1,12 +1,15 @@
 <?php
 include '../templates/header.template.php';
+session_start();
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 ?>
 
 <body>
 
-    <?php
+<?php
 include '../templates/nav.template.php';
 ?>
+
 
     <div class="container-fluid p-5">
         <div class="card shadow-lg">
@@ -91,7 +94,12 @@ include '../templates/nav.template.php';
                 </form>
             </div>
         </div>
-
 </body>
 
 </html>
+
+<?php
+} else {
+    echo "Please log in first to see this page.";
+}   
+?>
