@@ -3,6 +3,8 @@
 
 if (isset( $_POST['submit'])) {
 
+    include '../config/database.config.php';
+
 $submit_raw_data = array (
     'zipcode' => $_POST['zipcode'],
     // 'city' => $_POST['city'],
@@ -18,26 +20,36 @@ $submit_raw_data = array (
 
 $country_code = 'DE';
 
-$sql = "insert into addresses
+$sql_Addresses_Insert = "insert into addresses
         (address_street, address_street_number, address_country_code, address_zipcodeId)
         values
         ($submit_raw_data['street'],
          $submit_raw_data['street_number'],
          $country_code,
-         $submit_raw_data['zipcode'])
+         $submit_raw_data['zipcode'])";
+
+$result_addresses = mysqli_query($connection, $sql_Addresses_Insert);
+$last_record_Addresses_Insert = mysqli_insert_id($connection);
          
-         insert into estate_meta
+$sql_EstateMeta_Insert =  "insert into estate_meta
          (estate_meta_surface_size, estate_meta_rooms_count, estate_meta_bathroom_count, estate_meta_price_per_squaremeters, estate_meta_additional_costs )
          values
          ($submit_raw_data['surface_size'],
          $submit_raw_data['rooms_count'],
          $submit_raw_data['bathroom_count'],
          $submit_raw_data['price_per_square_meter'],
-         $submit_raw_data['additional_cost'] )
+         $submit_raw_data['additional_cost'] )";
 
-         insert into estates
-         (estate_typeid, addressid, estate_metaid)";
+$result_estateMeta = mysqli_query($connection, $sql_EstateMeta_Insert);
+$last_record_EstateMeta_Insert = mysqli_insert_id($connection);
 
+$sql_Estate_Insert = "insert into estates
+         (estate_typeid, addressid, estate_metaid)
+         values
+         ($submit_raw_data['estate_type'],
+         $last_record_Addresses_Insert,
+         $last_record_EstateMeta_Insert)";
 
+$result_estate = mysqli_query($connection, $sql_Estate_Insert);
 
 }
