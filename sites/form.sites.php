@@ -59,52 +59,29 @@ include '../templates/nav.template.php';
                         </select>
 
                         <div class="form-group mt-3">
-                            <label class="w-100" for="surface_size">Quadratmeter:</label>
-                            <input name="surface_size" class="form-control" id="surface_size" data-slider-id='surface_size'
-                                type="text" data-slider-min="0" data-slider-max="30000" data-slider-step="10"
-                                data-slider-value="0" />
-                            <span class="ml-3" id="surface_size_label">Ausgewählt: <span
-                                    id="surface_size_val"></span>m²</span>
-                            <button type="button" id="destroy_surface_size" class='ml-3 btn btn-link'>Manuelle Eingabe möglich</button>
+                            <label for="surface_size">Quadratmeter:</label>
+                            <input name="surface_size" type="text" class="form-control" id="surface_size">
                         </div>
 
                         <div class="form-group mt-3">
-                            <label class="w-100" for="rooms_count">Zimmer:</label>
-                            <input name="rooms_count" class="form-control" id="rooms_count" data-slider-id='rooms_count'
-                                type="text" data-slider-min="0" data-slider-max="30" data-slider-step="1"
-                                data-slider-value="0" />
-                            <span class="ml-3" id="rooms_count_label">Ausgewählt: <span
-                                    id="rooms_count_val"></span></span>
+                            <label for="rooms_count">Zimmer:</label>
+                            <input name="rooms_count" type="text" class="form-control" id="rooms_count">
                         </div>
 
                         <div class="form-group mt-3">
-                            <label class="w-100" for="bathroom_count">Badezimmer:</label>
-                            <input name="bathroom_count" class="form-control" id="bathroom_count"
-                                data-slider-id='bathroom_count' type="text" data-slider-min="0" data-slider-max="30"
-                                data-slider-step="1" data-slider-value="0" />
-                            <span class="ml-3" id="rooms_count_label">Ausgewählt: <span
-                                    id="bathroom_count_val"></span></span>
+                            <label for="bathroom_count">Badezimmer:</label>
+                            <input name="bathroom_count" type="text" class="form-control" id="bathroom_count">
                         </div>
 
                         <div class="form-group mt-3">
-                            <label class="w-100" for="price_per_square_meter">Preis Pro m²:</label>
-                            <input type="number" name="price_per_square_meter" class="form-control" id="price_per_square_meter"
-                                data-slider-id='price_per_square_meter' type="text" data-slider-min="0" data-slider-max="2000"
-                                data-slider-step="10" data-slider-value="0" />
-                            <span class="ml-3" id="price_per_square_meter_label">Ausgewählt: <span
-                                    id="price_per_square_meter_val"></span>€</span>
-
-                            <button type="button" id="destroy_price_per_square_meter" class='ml-3 btn btn-link'>Manuelle Eingabe möglich</button>
+                            <label for="price_per_square_meter">Preis Pro m²:</label>
+                            <input name="price_per_square_meter" type="text" class="form-control"
+                                id="price_per_square_meter">
                         </div>
 
                         <div class="form-group mt-3">
-                            <label class="w-100" for="additional_cost">Nebenkosten:</label>
-                            <input name="additional_cost" class="form-control" id="additional_cost"
-                                data-slider-id='additional_cost' type="text" data-slider-min="0" data-slider-max="2000"
-                                data-slider-step="10" data-slider-value="0" />
-                            <span class="ml-3" id="additional_cost_span">Ausgewählt: <span
-                                    id="additional_cost_val"></span>€</span>
-                             <button type="button" id="destroy_additional_cost" class='ml-3 btn btn-link'>Manuelle Eingabe möglich</button>
+                            <label for="additional_cost">Nebenkosten:</label>
+                            <input name="additional_cost" type="text" class="form-control" id="additional_cost">
                         </div>
 
                         <div class="shadow-lg card card-custom-money" style="max-width: 15rem;">

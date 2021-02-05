@@ -3,8 +3,6 @@
 if (isset( $_POST['submit'])) {
 
     include '../config/database.config.php';
-    
-//insert für die Estate-Tabelle und damit verbundene Tabellen
 
 $submit_raw_data = array (
     'zipcode' => $_POST['zipcode'],
