@@ -6,7 +6,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
 <body>
 
-<?php
+    <?php
 include '../templates/nav.template.php';
 ?>
     <div class="container-fluid p-5">
@@ -16,17 +16,18 @@ include '../templates/nav.template.php';
             </div>
             <div class="card-body">
 
-                <form action="../methods/inserts/new.insert.php" method="post">
+                <form id="ims_insert_form" action="../methods/inserts/new.insert.php" method="post">
                     <h5 class="mt-5">Adresse</h5>
 
                     <div class="form-row mt-3">
                         <div class="col-6">
                             <label for="zipcode">Postleitzahl:</label>
-                            <input name="zipcode" type="text" class="form-control" id="zipcode">
+                            <input onKeyDown="limitText(this,5);" onKeyUp="limitText(this,5);" type="number"
+                                name="zipcode" type="text" class="form-control" id="zipcode">
                         </div>
                         <div class="col">
                             <label for="city">Stadt:</label>
-                            <input name="city" type="text" class="form-control" id="city">
+                            <input disabled name="city" type="text" class="form-control" id="city">
                         </div>
                     </div>
 

@@ -12,6 +12,6 @@ echo '
     <link rel="stylesheet" href="../frontend/bootstrap.min.css">
     <link rel="stylesheet" href="../frontend/bootstrap.custom.css">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    
+    <script src="../scripts/base.js"></script>
 </head>';
 
