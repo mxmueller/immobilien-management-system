@@ -26,7 +26,7 @@ include '../config/database.config.php';
         header("Location: ../../sites/dashboard.sites.php");    
     } else {
         echo "Wrong Password, Mail combination!";
-        header("Location: ../..");
+        header("Location: ../../sites/login.sites.php");
     }
 
 } else {

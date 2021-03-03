@@ -1,7 +1,6 @@
 <?php
 
 //Insert für die Tenants-Tabelle und damit verbundene Tabellen
-
 if (isset( $_POST['submit'])) {
 
     include '../config/database.config.php';
@@ -20,7 +19,6 @@ $result_tenant = mysqli_query($connection, $sql_Tenants_Insert);
 $last_record_Tenant_Insert = mysqli_insert_id($connection);
 
 //ACHTUNG: Typo in "TentantID" -> sollte eigentlich TenantID heißen ...
-
 $sql_Tenants_In_Estate_Insert = "insert into Tentants_In_Estates
          (estateid, tentantid )
          values
