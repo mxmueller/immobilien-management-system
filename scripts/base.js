@@ -19,8 +19,6 @@ function zipCodeString($form) {
     let $zip_code = $form.find("#zipcode");
     let $city = $form.find("#city");
 
-    debugger;
-
     $zip_code.on("input", function () {
       let $zip_code_dom = $(this);
       let $zip_code_dom_input = $zip_code_dom.val();

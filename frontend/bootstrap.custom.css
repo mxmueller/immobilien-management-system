@@ -1,7 +1,7 @@
-.font-weight-custom {
+/* .font-weight-custom {
     font-weight: 500 !important;
     color: #fff !important;
-}
+} */
 
 .navbar-brand {
     padding-top: 0px !important;
@@ -25,7 +25,7 @@ body {
         background-attachment: unset;
         background-position: top; */
 
-        background: radial-gradient(#78c2ad 3px, transparent 4px),
+        /* background: radial-gradient(#78c2ad 3px, transparent 4px),
         radial-gradient(#a4a4a4 3px, transparent 4px),
         linear-gradient(#fff 4px, transparent 0),
         linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px),
@@ -40,5 +40,13 @@ body {
         0px 0px,
         0px 0px,
         0px 0px,
-        0px 0px;
+        0px 0px; */
+
+background: #673ab7;
+/* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #5e24c3, #8654ff);
+/* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #5e24c3, #8654ff);
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+

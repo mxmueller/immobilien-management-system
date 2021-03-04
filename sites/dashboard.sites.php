@@ -8,9 +8,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 <body>
     <div class="container-fluid p-5">
 
-        <div class="card shadow w-25 float-left">
+        <div style="max-width: 350px; min-width: 295px;" class=" card shadow float-left">
             <div class="card-header ">
-                <h4 class="mt-2">Herzlich Wilkommen: </h4>
+                <h5 class="mt-2 font-weight-bold">Herzlich Wilkommen: </h5>
             </div>
             <div class="card-body ">
                 <?php
@@ -18,9 +18,10 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                 ?>
             </div>
         </div>
-        <div class="card shadow w-25 float-left ml-5">
+        <div style="max-width: 350px;" class="card shadow float-left ml-5">
+            <img class="card-img-top" src="../assets/house.jpg" alt="Card image cap">
             <div class="card-header ">
-                <h4 class="mt-2">Angelegte Immobilien: </h4>
+                <h5 class="mt-2 font-weight-bold">Angelegte Immobilien: </h5>
             </div>
             <div class="card-body "> <?php
                                         include '../methods/gets/get.estates.php';

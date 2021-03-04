@@ -1,8 +1,8 @@
 <?php
-echo '<nav class=" shadow p-3 navbar navbar-expand-lg navbar-dark bg-primary">
-<a class="navbar-brand" href="../sites/dashboard.sites.php">
-  <img class="ml-4" src="../assets/imsLogo.svg" alt="Logo" style="
-  max-width: 50px">
+echo '<nav class=" shadow p-3 navbar navbar-expand-lg navbar-light bg-light">
+<a class="ml-2 navbar-brand" href="../sites/dashboard.sites.php">
+  <img class="ml-4" src="../assets/logo.svg" alt="Logo" style="
+  max-width: 110px">
 </a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>

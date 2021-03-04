@@ -126,7 +126,7 @@ class buildEstateQuery
                         $link = $host . '/' . $root . '/' . $path;
 
                         $button = "<a class='btn btn-outline-info'
-                        href='" . $link . "' target='_blank'>
+                        href='" . $link . "'>
                         Detailansicht / Bearbeiten
                         </a>";
 
