@@ -1,9 +1,9 @@
 <?php
 
-$servername = "127.0.0.1";
-$username = "root";
-$password = "";
-$database = "ims_local_instance";
+$servername = "bngwcgyjxquzsogdpgjv-mysql.services.clever-cloud.com";
+$username = "ubzcxi5aeywhopxg";
+$password = "GkgWQRKJzxDrFquEIQp6";
+$database = "bngwcgyjxquzsogdpgjv";
 
 // Create connection
 $connection = new mysqli($servername, $username, $password, $database);
@@ -11,5 +11,3 @@ $connection = new mysqli($servername, $username, $password, $database);
 if ($connection->connect_error) {
   die("Connection failed: " . $connection->connect_error);
 }
-
-
