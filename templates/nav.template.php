@@ -15,9 +15,6 @@ echo '<nav class=" shadow p-3 navbar navbar-expand-lg navbar-light bg-light">
        <li class="nav-item">
         <a class="ml-3 nav-link font-weight-custom" href="../sites/estate-overview.sites.php">Alle Immobilien anzeigen</a>
       </li>
-      <li class="nav-item">
-        <a class="ml-3 nav-link font-weight-custom" href="../sites/search.sites.php">Suche</a>
-      </li>
     </ul>
   </div>
 </nav>';

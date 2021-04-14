@@ -91,12 +91,12 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                                 <button type="button" id="destroy_additional_cost" class='ml-3 btn btn-link'>Manuelle Eingabe möglich</button>
                             </div>
 
-                            <div class="shadow-lg card card-custom-money" style="max-width: 15rem;">
+                            <!-- <div class="shadow-lg card card-custom-money" style="max-width: 15rem;">
                                 <div class="card-body">
                                     <h6 class="card-title">Mietertrag pro Monat</h6>
                                     <p class="card-text font-weight-bold text-success">499€</p>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
 
                         <button type="submit" class="btn btn-info mt-5" name="submit">Submit</button>
